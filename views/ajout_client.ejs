@@ -1,0 +1,12 @@
+<form method="POST" action="/ajout_client">
+    <label>Nom:</label><input type="text" name="nom" required><br>
+    <label>Prénom:</label><input type="text" name="prenom" required><br>
+    <label>Âge:</label><input type="number" name="age" required><br>
+    <label>Région:</label>
+    <select name="ID_region">
+        <% regions.forEach(region => { %>
+            <option value="<%= region.ID_region %>"><%= region.libelle %></option>
+        <% }); %>
+    </select><br>
+    <button type="submit">Ajouter</button>
+</form>

@@ -1,0 +1,21 @@
+<h1>Liste des clients</h1>
+<table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Âge</th>
+        <th>Région</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </tr>
+    <% clients.forEach(client => { %>
+        <tr>
+            <td><%= client.nom %></td>
+            <td><%= client.prenom %></td>
+            <td><%= client.age %></td>
+            <td><%= client.region %></td>
+            <td><a href="/modifier/<%= client.ID_client %>">modifier</a></td>
+            <td><a href="/supprimer/<%= client.ID_client %>">supprimer</a></td>
+        </tr>
+    <% }); %>
+</table>

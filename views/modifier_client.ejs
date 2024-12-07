@@ -1,0 +1,22 @@
+<h1>Modifier Client</h1>
+<form method="POST" action="/modifier/<%= client.ID_client %>">
+    <label>Nom:</label>
+    <input type="text" name="nom" value="<%= client.nom %>" required><br>
+
+    <label>Prénom:</label>
+    <input type="text" name="prenom" value="<%= client.prenom %>" required><br>
+
+    <label>Âge:</label>
+    <input type="number" name="age" value="<%= client.age %>" required><br>
+
+    <label>Région:</label>
+    <select name="ID_region">
+        <% regions.forEach(region => { %>
+            <option value="<%= region.ID_region %>" <%= region.ID_region === client.ID_region ? 'selected' : '' %>>
+                <%= region.libelle %>
+            </option>
+        <% }); %>
+    </select><br>
+
+    <button type="submit">Modifier</button>
+</form>
